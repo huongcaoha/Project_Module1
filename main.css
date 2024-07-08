@@ -235,6 +235,7 @@ ul {
         width: 22%;
         gap: 10px;
         position: relative;
+        overflow: hidden;
        img {
         border: 3px solid rgb(75, 66, 66);
         width: 100%;
@@ -256,6 +257,7 @@ ul {
     div:hover {
         a {
             display: block;
+            animation: hoverBuyNow 0.2s 1 linear forwards;
         }
     }
    }
@@ -325,5 +327,13 @@ footer {
     to {
         background-color: aquamarine;
         color: white;
+    }
+  }
+  @keyframes hoverBuyNow{
+    from {
+        bottom: 50px;
+    }
+    to {
+        bottom: 79px;
     }
   }
