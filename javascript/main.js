@@ -1,5 +1,6 @@
 let category = [
   "vest",
+  "vest",
   "threeHoles",
   "longSleeveShirt",
   "patternedShirt",
@@ -20,6 +21,7 @@ let listProduct = [
     price: 2449000,
     image1: "vest_image1.webp",
     image2: "vest_image1_1.webp",
+    color: "black",
   },
 
   {
@@ -29,6 +31,7 @@ let listProduct = [
     price: 2139000,
     image1: "vest_image2.webp",
     image2: "vest_image2_1.jpg",
+    color: "purple",
   },
 
   {
@@ -38,6 +41,7 @@ let listProduct = [
     price: 2139000,
     image1: "vest_image3.webp",
     image2: "vest_image3_1.webp",
+    color: "gray",
   },
 
   {
@@ -47,6 +51,7 @@ let listProduct = [
     price: 2389000,
     image1: "vest_image4.webp",
     image2: "vest_image4_1.webp",
+    color: "purple",
   },
 
   {
@@ -56,6 +61,7 @@ let listProduct = [
     price: 2349000,
     image1: "vest_image5.webp",
     image2: "vest_image5_1.webp",
+    color: "purple",
   },
 
   {
@@ -65,6 +71,7 @@ let listProduct = [
     price: 2449000,
     image1: "vest_image6.webp",
     image2: "vest_image6_1.jpg",
+    color: "purple",
   },
 
   {
@@ -74,6 +81,7 @@ let listProduct = [
     price: 2488000,
     image1: "vest_image7.webp",
     image2: "vest_image7_1.webp",
+    color: "gray",
   },
 
   {
@@ -83,6 +91,7 @@ let listProduct = [
     price: 2339000,
     image1: "vest_image8.webp",
     image2: "vest_image8_1.webp",
+    color: "gray",
   },
 
   {
@@ -92,6 +101,7 @@ let listProduct = [
     price: 2299000,
     image1: "vest_image9.webp",
     image2: "vest_image9_1.webp",
+    color: "black",
   },
 
   {
@@ -101,6 +111,7 @@ let listProduct = [
     price: 1799000,
     image1: "vest_image10.webp",
     image2: "vest_image10_1.jpg",
+    color: "gray",
   },
 
   {
@@ -110,33 +121,37 @@ let listProduct = [
     price: 175000,
     image1: "threeHoles_image1.webp",
     image2: "threeHoles_image1_1.webp",
+    color: "black",
   },
 
   {
     id: 12,
     category: "threeHoles",
-    name: "Áo Ba Lỗ Đen Cơ Bản Co Giãn 8ABLB002DEN",
+    name: "[Mua 1 Tặng 1] Áo Ba Lỗ Trắng Cơ Bản Co Giãn 8ABLB002TRK",
     price: 175000,
     image1: "threeHoles_image2.webp",
     image2: "threeHoles_image2_1.webp",
+    color: "white",
   },
 
   {
     id: 13,
     category: "threeHoles",
-    name: "Áo Ba Lỗ Trắng Cơ Bản Co Giãn 8ABLB002TRK",
+    name: "[Mua 1 Tặng 1] Áo Ba Lỗ Đen Cơ Bản Co Giãn 8ABLB001DEN",
     price: 175000,
     image1: "threeHoles_image3.webp",
     image2: "threeHoles_image3_1.webp",
+    color: "black",
   },
 
   {
     id: 14,
     category: "threeHoles",
-    name: "Áo Ba Lỗ Trắng Cơ Bản Co Giãn 8ABLB001TRK",
+    name: "[Mua 1 Tặng 1] Áo Ba Lỗ Trắng Cơ Bản Co Giãn 8ABLB001TRK",
     price: 175000,
     image1: "threeHoles_image4.webp",
     image2: "threeHoles_image4_1.webp",
+    color: "white",
   },
 
   {
@@ -146,6 +161,7 @@ let listProduct = [
     price: 885000,
     image1: "longSleeveShirt_image1.webp",
     image2: "longSleeveShirt_image1_1.webp",
+    color: "white",
   },
 
   {
@@ -155,6 +171,7 @@ let listProduct = [
     price: 885000,
     image1: "longSleeveShirt_image2.webp",
     image2: "longSleeveShirt_image2_1.webp",
+    color: "white",
   },
 
   {
@@ -164,6 +181,7 @@ let listProduct = [
     price: 299000,
     image1: "longSleeveShirt_image3.webp",
     image2: "longSleeveShirt_image3_1.webp",
+    color: "blue",
   },
 
   {
@@ -173,6 +191,7 @@ let listProduct = [
     price: 559000,
     image1: "longSleeveShirt_image4.webp",
     image2: "longSleeveShirt_image4_1.webp",
+    color: "white",
   },
 
   {
@@ -182,6 +201,7 @@ let listProduct = [
     price: 545000,
     image1: "longSleeveShirt_image5.webp",
     image2: "longSleeveShirt_image5_1.webp",
+    color: "blue",
   },
 
   {
@@ -191,6 +211,7 @@ let listProduct = [
     price: 799000,
     image1: "longSleeveShirt_image6.webp",
     image2: "longSleeveShirt_image6_1.webp",
+    color: "blue",
   },
 
   {
@@ -200,6 +221,7 @@ let listProduct = [
     price: 579000,
     image1: "longSleeveShirt_image7.webp",
     image2: "longSleeveShirt_image7_1.webp",
+    color: "white",
   },
 
   {
@@ -209,6 +231,7 @@ let listProduct = [
     price: 695000,
     image1: "longSleeveShirt_image8.webp",
     image2: "longSleeveShirt_image8_1.webp",
+    color: "blue",
   },
 
   {
@@ -218,6 +241,7 @@ let listProduct = [
     price: 569000,
     image1: "longSleeveShirt_image9.webp",
     image2: "longSleeveShirt_image9_1.webp",
+    color: "purple",
   },
 
   {
@@ -227,6 +251,7 @@ let listProduct = [
     price: 799000,
     image1: "longSleeveShirt_image10.webp",
     image2: "longSleeveShirt_image10_1.webp",
+    color: "blue",
   },
 
   {
@@ -236,6 +261,7 @@ let listProduct = [
     price: 429000,
     image1: "patternedShirt_image1.webp",
     image2: "patternedShirt_image1_1.webp",
+    color: "blue",
   },
 
   {
@@ -245,6 +271,7 @@ let listProduct = [
     price: 429000,
     image1: "patternedShirt_image2.webp",
     image2: "patternedShirt_image2_1.jpg",
+    color: "blue",
   },
 
   {
@@ -254,6 +281,7 @@ let listProduct = [
     price: 495000,
     image1: "patternedShirt_image3.webp",
     image2: "patternedShirt_image3_1.webp",
+    color: "blue",
   },
 
   {
@@ -263,6 +291,7 @@ let listProduct = [
     price: 489000,
     image1: "patternedShirt_image4.webp",
     image2: "patternedShirt_image4_1.jpg",
+    color: "blue",
   },
 
   {
@@ -272,6 +301,7 @@ let listProduct = [
     price: 439000,
     image1: "patternedShirt_image5.webp",
     image2: "patternedShirt_image5_1.jpg",
+    color: "blue",
   },
 
   {
@@ -281,6 +311,7 @@ let listProduct = [
     price: 439000,
     image1: "patternedShirt_image6.webp",
     image2: "patternedShirt_image6_1.webp",
+    color: "blue",
   },
 
   {
@@ -290,6 +321,7 @@ let listProduct = [
     price: 495000,
     image1: "patternedShirt_image7.webp",
     image2: "patternedShirt_image7_1.webp",
+    color: "white",
   },
 
   {
@@ -299,6 +331,7 @@ let listProduct = [
     price: 699000,
     image1: "patternedShirt_image8.jpg",
     image2: "patternedShirt_image8_1.webp",
+    color: "purple",
   },
 
   {
@@ -308,6 +341,7 @@ let listProduct = [
     price: 650000,
     image1: "polo_image1.webp",
     image2: "polo_image1_1.webp",
+    color: "blue",
   },
 
   {
@@ -317,6 +351,7 @@ let listProduct = [
     price: 650000,
     image1: "polo_image2.webp",
     image2: "polo_image2_1.webp",
+    color: "brown",
   },
 
   {
@@ -326,6 +361,7 @@ let listProduct = [
     price: 395000,
     image1: "polo_image3.webp",
     image2: "polo_image3_1.webp",
+    color: "black",
   },
 
   {
@@ -335,6 +371,7 @@ let listProduct = [
     price: 395000,
     image1: "polo_image4.webp",
     image2: "polo_image4_1.webp",
+    color: "gray",
   },
 
   {
@@ -344,6 +381,7 @@ let listProduct = [
     price: 289000,
     image1: "polo_image5.webp",
     image2: "polo_image5_1.webp",
+    color: "pink",
   },
 
   {
@@ -353,6 +391,7 @@ let listProduct = [
     price: 429000,
     image1: "polo_image6.webp",
     image2: "polo_image6_1.webp",
+    color: "white",
   },
 
   {
@@ -362,6 +401,7 @@ let listProduct = [
     price: 395000,
     image1: "polo_image7.webp",
     image2: "polo_image7_1.webp",
+    color: "pink",
   },
 
   {
@@ -371,15 +411,17 @@ let listProduct = [
     price: 369000,
     image1: "polo_image8.webp",
     image2: "polo_image8_1.webp",
+    color: "brown",
   },
 
   {
     id: 41,
     category: "polo",
-    name: "Áo Polo Nâu Cơ Bản Vải Recycle Thân Thiện Với Da 8APCB460NAU",
+    name: "Áo Polo Trắng Cơ Bản Không Đường May Chống Nhăn 8APCT401TRK",
     price: 650000,
     image1: "polo_image9.webp",
     image2: "polo_image9_1.webp",
+    color: "white",
   },
 
   {
@@ -389,6 +431,7 @@ let listProduct = [
     price: 585000,
     image1: "polo_image10.webp",
     image2: "polo_image10_1.webp",
+    color: "white",
   },
 
   {
@@ -398,6 +441,7 @@ let listProduct = [
     price: 495000,
     image1: "longPolo_image1.jpg",
     image2: "longPolo_image1_1.webp",
+    color: "black",
   },
 
   {
@@ -407,6 +451,7 @@ let listProduct = [
     price: 885000,
     image1: "koreanMen_image1.webp",
     image2: "koreanMen_image1_1.webp",
+    color: "white",
   },
 
   {
@@ -416,6 +461,7 @@ let listProduct = [
     price: 885000,
     image1: "koreanMen_image2.webp",
     image2: "koreanMen_image2_1.webp",
+    color: "white",
   },
 
   {
@@ -425,6 +471,7 @@ let listProduct = [
     price: 799000,
     image1: "koreanMen_image3.webp",
     image2: "koreanMen_image3_1.jpg",
+    color: "blue",
   },
 
   {
@@ -434,6 +481,7 @@ let listProduct = [
     price: 799000,
     image1: "koreanMen_image4.webp",
     image2: "koreanMen_image4_1.webp",
+    color: "blue",
   },
 
   {
@@ -443,6 +491,7 @@ let listProduct = [
     price: 799000,
     image1: "koreanMen_image5.webp",
     image2: "koreanMen_image5_1.webp",
+    color: "blue",
   },
 
   {
@@ -452,6 +501,7 @@ let listProduct = [
     price: 755000,
     image1: "koreanMen_image6.webp",
     image2: "koreanMen_image6_1.webp",
+    color: "white",
   },
 
   {
@@ -461,6 +511,7 @@ let listProduct = [
     price: 699000,
     image1: "koreanMen_image7.jpg",
     image2: "koreanMen_image7_1.webp",
+    color: "purple",
   },
 
   {
@@ -470,6 +521,7 @@ let listProduct = [
     price: 695000,
     image1: "koreanMen_image8.webp",
     image2: "koreanMen_image8_1.webp",
+    color: "blue",
   },
 
   {
@@ -479,6 +531,7 @@ let listProduct = [
     price: 635000,
     image1: "koreanMen_image9.webp",
     image2: "koreanMen_image9_1.jpg",
+    color: "blue",
   },
 
   {
@@ -488,6 +541,7 @@ let listProduct = [
     price: 635000,
     image1: "koreanMen_image10.webp",
     image2: "koreanMen_image10_1.jpg",
+    color: "purple",
   },
 ];
 
@@ -503,13 +557,15 @@ let listVest = JSON.parse(listVestJson).filter(
 let productVest = [];
 for (let product of listVest) {
   productVest.push(`
-         <div class="vestProduct vest-item">
-    <img
-      id="${product.id}"
-      class="item"
-      src="./image/products/${product.image1}"
-      alt="${product.name}"
-    />
+         <div class="vest-item">
+            <div class="item">
+              <img
+              id="${product.id}"
+              
+              src="../image/products/${product.image1}"
+              alt="${product.name}"
+            </div>
+
     <a href="#" class="buy-now">Mua ngay</a>
   </div>
     `);
@@ -535,15 +591,6 @@ function stopCategoryPolo() {
   clearInterval(setIntervalPolo);
 }
 runCategoryPolo();
-
-// for (let product of productVest) {
-//   product.addEventListener("mouseover", function () {
-//     stopCategoryPolo();
-//   });
-//   product.addEventListener("mouseout", function () {
-//     runCategoryPolo();
-//   });
-// }
 
 let tagListTotalProduct = document.querySelector(".listTotalProduct");
 let totalProductJson = localStorage.getItem("products");
@@ -584,25 +631,27 @@ let newListProducts = productLongSleeveShirt.concat(
 
 for (let product of newListProducts) {
   tagListTotalProduct.innerHTML += `
-         <div class="vestProduct vest-item" id="${product.image2}">
-    <img
-      id="${product.id}"
-      class="item"
-      src="./image/products/${product.image1}"
-      alt="${product.name}"
-    />
-     <p>${product.name}</p>
-    <p>${new Intl.NumberFormat("vi-VN", { style: "decimal" }).format(
-      product.price
-    )}VNĐ</p>
-    <a href="#" class="buy-now">Mua ngay</a>
-  </div>
+         <div class="item-product" id="${product.image2}">
+            <div class="item">
+                <img
+                id="${product.id}"
+                src="../image/products/${product.image1}"
+                alt="${product.name}"
+                />
+                <a href="#" class="buy-now">Mua ngay</a>
+            </div>
+              <p>${product.name}</p>
+               <p>${new Intl.NumberFormat("vi-VN", { style: "decimal" }).format(
+                 product.price
+               )}VNĐ</p>
+            
+          </div>
     `;
 }
 
-let listItems = tagListTotalProduct.querySelectorAll(".vestProduct");
+let listItems = tagListTotalProduct.querySelectorAll(".item-product");
 for (let item of listItems) {
-  let image2 = "./image/products/" + item.getAttribute("id");
+  let image2 = "../image/products/" + item.getAttribute("id");
   let img = item.querySelector("img");
   let image1 = img.src;
   item.addEventListener("mouseover", function () {
@@ -617,3 +666,6 @@ for (let item of listItems) {
     }, 200);
   });
 }
+
+let inputSearch = document.querySelector("#input-search");
+let buttonSearch = document.querySelector("#button-search");

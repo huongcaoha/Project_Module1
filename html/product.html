@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="../css/product.css" />
+  </head>
+  <body>
+    <div class="header">
+      <ul class="navbar">
+        <li>
+          <a href="main.html">
+            <img src="../image/logo.svg" alt="logo" class="logo"
+          /></a>
+        </li>
+        <li><a href="#">Trang chủ</a></li>
+        <li class="navbar-category">
+          <a href="#">Danh mục</a>
+          <div id="category">
+            <ul>
+              <li>
+                <a href="product.html?slide=1">
+                  <img src="../image/category/vest.webp" alt="category" />
+                  Áo Vest Name
+                </a>
+              </li>
+
+              <li>
+                <a href="product.html?slide=2">
+                  <img
+                    src="../image/category/three_holes_shirt.webp"
+                    alt="category"
+                  />
+                  Áo Ba Lỗ
+                </a>
+              </li>
+
+              <li>
+                <a href="product.html?slide=3">
+                  <img
+                    src="../image/category/longSleeveShirt.webp"
+                    alt="category"
+                  />
+                  Áo Sơ Mi Dài Tay
+                </a>
+              </li>
+
+              <li>
+                <a href="product.html?slide=4">
+                  <img
+                    src="../image/category/patterned_shirt.png"
+                    alt="category"
+                  />
+                  Áo Sơ Mi Họa Tiết
+                </a>
+              </li>
+
+              <li>
+                <a href="product.html?slide=5">
+                  <img
+                    src="../image/category/men's_polo_shirt.webp"
+                    alt="category"
+                  />
+                  Áo Polo Nam
+                </a>
+              </li>
+
+              <li>
+                <a href="product.html?slide=6">
+                  <img
+                    src="../image/category/long_sleeve_polo_shirt.webp"
+                    alt="category"
+                  />
+                  Áo Polo Dài Tay
+                </a>
+              </li>
+
+              <li>
+                <a href="product.html?slide=7">
+                  <img
+                    src="../image/category/korean_men's_shirts.png"
+                    alt="category"
+                  />
+                  Áo Sơ Mi Nam Hàn Quốc
+                </a>
+              </li>
+
+              <li>
+                <a href="product.html?slide=8">
+                  <img src="../image/category/jacket.webp" alt="category" />
+                  Áo Khoác
+                </a>
+              </li>
+
+              <li>
+                <a href="product.html?slide=9">
+                  <img src="../image/category/feltset.webp" alt="category" />
+                  Bộ Nỉ
+                </a>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <li><a href="#">Về chúng tôi</a></li>
+        <li>
+          <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
+        </li>
+      </ul>
+    </div>
+
+    <div>
+      <img class="slide" src="../image/slide/slidePatternedShirt.jpg" alt="" />
+    </div>
+
+    <main>
+      <div class="filter">
+        <div class="search">
+          <form action="" method="GET">
+            <input
+              type="text"
+              name="search"
+              id="search"
+              placeholder="  Tìm kiếm sản phẩm"
+            />
+            <button>Tìm kiếm</button>
+          </form>
+        </div>
+
+        <h3 class="title-filter">Bộ lọc</h3>
+        <div class="nav-filter">
+          <div class="filter-category">
+            <label for="categories">Category</label>
+            <select name="categories" id="categories">
+              <option value="">Chọn</option>
+              <option value="vest">Áo Vest Name</option>
+              <option value="threeHoles">Áo Ba Lỗ</option>
+              <option value="longSleeveShirt">Áo Sơ Mi Dài Tay</option>
+              <option value="patternedShirt">Áo Sơ Mi Họa Tiết</option>
+              <option value="polo">Áo Polo Nam</option>
+              <option value="longPolo">Áo Polo Dài Tay</option>
+              <option value="koreanMen">Áo Sơ Mi Hàn Quốc</option>
+              <option value="jacket">Áo Khoác</option>
+              <option value="feltset">Bộ Nỉ</option>
+              <option value="all">Tất Cả</option>
+            </select>
+          </div>
+
+          <div class="filter-color">
+            <div>
+              <input type="radio" name="color" id="white" />
+              <label for="white">Màu Trắng</label>
+            </div>
+
+            <div>
+              <input type="radio" name="color" id="black" />
+              <label for="black">Màu Đen</label>
+            </div>
+
+            <div>
+              <input type="radio" name="color" id="blue" />
+              <label for="blue">Màu Xanh</label>
+            </div>
+
+            <div>
+              <input type="radio" name="color" id="grey" />
+              <label for="grey">Màu Xám</label>
+            </div>
+
+            <div>
+              <input type="radio" name="color" id="caro" />
+              <label for="caro">Màu Caro</label>
+            </div>
+
+            <div>
+              <input type="radio" name="color" id="purple" />
+              <label for="purple">Màu Tím</label>
+            </div>
+
+            <div>
+              <input type="radio" name="color" id="pink" />
+              <label for="pink">Màu Hồng</label>
+            </div>
+
+            <div>
+              <input type="radio" name="color" id="brown" />
+              <label for="brown">Màu Nâu</label>
+            </div>
+
+            <div>
+              <input type="radio" name="color" id="gray" />
+              <label for="gray">Màu Ghi</label>
+            </div>
+          </div>
+
+          <div class="filter-price">
+            <div>
+              <input type="radio" name="price" id="0-300k" value="300000" />
+              <label for="0-300k">Dưới 300K</label>
+            </div>
+
+            <div>
+              <input type="radio" name="price" id="300k-500k" value="500000" />
+              <label for="300k-500k">300K - 500K</label>
+            </div>
+
+            <div>
+              <input type="radio" name="price" id="500k-900k" value="900000" />
+              <label for="500k-900k">500K - 900K</label>
+            </div>
+
+            <div>
+              <input
+                type="radio"
+                name="price"
+                id="900k-1400k"
+                value="1400000"
+              />
+              <label for="900k-1500k">900K - 1400K</label>
+            </div>
+
+            <div>
+              <input
+                type="radio"
+                name="price"
+                id="1400k-2000k"
+                value="2000000"
+              />
+              <label for="1400k-2000k">1400K - 2000K</label>
+            </div>
+
+            <div>
+              <input
+                type="radio"
+                name="price"
+                id="2000k-3000k"
+                value="3000000"
+              />
+              <label for="2000k-3000k">2000K - 3000K</label>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="resultProduct"></div>
+    </main>
+
+    <footer>
+      <img src="../image/logo-footer.svg" alt="logo-footer" />
+      <br />
+      <br />
+      <h3>CÔNG TY CỔ PHẦN TẬP ĐOÀN THỜI TRANG VIỆT NAM</h3>
+      <br />
+      <p>
+        Địa chỉ: 505 Nguyễn Trãi, Phường Thanh Xuân Nam, Quận Thanh Xuân, Thành
+        phố Hà Nội, Việt Nam
+      </p>
+      <br />
+      <p>
+        Mã số doanh nghiệp: 0108610681 do Sở Kế hoạch và Đầu tư Tp Hà Nội cấp
+        lần đầu ngày 01/02/2019
+      </p>
+      <br />
+      <a href="#"><strong>Hotline: 094.432.8989</strong></a
+      ><br />
+      <br />
+      <p>
+        Copyright © 2024 BILUXURY. Powered by BILUXURY - reflect content:
+        heroseo
+      </p>
+    </footer>
+    <script src="../javascript/product.js"></script>
+  </body>
+</html>
