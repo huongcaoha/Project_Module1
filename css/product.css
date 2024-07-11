@@ -91,7 +91,14 @@ ul {
     background-size: cover;
    }
 }
-
+#button-search {
+    background-color: #f8f8f8;
+    border: 1px solid rgb(170, 167, 167);
+    padding: 8px;
+    border-radius: 10px;
+    margin-left: 10px;
+    color: black;
+}
 main {
     .filter {
         .search {

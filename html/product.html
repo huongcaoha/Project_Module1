@@ -27,15 +27,20 @@
           <div id="category">
             <ul>
               <li>
-                <a href="product.html?slide=1">
-                  <img src="../image/category/vest.webp" alt="category" />
+                <a href="product.html" class="categorySlide" title="1">
+                  <img
+                    src="../image/category/vest.webp"
+                    alt="category"
+                    title="1"
+                  />
                   Áo Vest Name
                 </a>
               </li>
 
               <li>
-                <a href="product.html?slide=2">
+                <a href="product.html" class="categorySlide" title="2">
                   <img
+                    title="2"
                     src="../image/category/three_holes_shirt.webp"
                     alt="category"
                   />
@@ -44,8 +49,9 @@
               </li>
 
               <li>
-                <a href="product.html?slide=3">
+                <a href="product.html" class="categorySlide" title="3">
                   <img
+                    title="3"
                     src="../image/category/longSleeveShirt.webp"
                     alt="category"
                   />
@@ -54,8 +60,9 @@
               </li>
 
               <li>
-                <a href="product.html?slide=4">
+                <a href="product.html" class="categorySlide" title="4">
                   <img
+                    title="4"
                     src="../image/category/patterned_shirt.png"
                     alt="category"
                   />
@@ -64,8 +71,9 @@
               </li>
 
               <li>
-                <a href="product.html?slide=5">
+                <a href="product.html" class="categorySlide" title="5">
                   <img
+                    title="5"
                     src="../image/category/men's_polo_shirt.webp"
                     alt="category"
                   />
@@ -74,8 +82,9 @@
               </li>
 
               <li>
-                <a href="product.html?slide=6">
+                <a href="product.html" class="categorySlide" title="6">
                   <img
+                    title="6"
                     src="../image/category/long_sleeve_polo_shirt.webp"
                     alt="category"
                   />
@@ -84,8 +93,9 @@
               </li>
 
               <li>
-                <a href="product.html?slide=7">
+                <a href="product.html" class="categorySlide" title="7">
                   <img
+                    title="7"
                     src="../image/category/korean_men's_shirts.png"
                     alt="category"
                   />
@@ -94,15 +104,23 @@
               </li>
 
               <li>
-                <a href="product.html?slide=8">
-                  <img src="../image/category/jacket.webp" alt="category" />
+                <a href="product.html" class="categorySlide" title="8">
+                  <img
+                    title="8"
+                    src="../image/category/jacket.webp"
+                    alt="category"
+                  />
                   Áo Khoác
                 </a>
               </li>
 
               <li>
-                <a href="product.html?slide=9">
-                  <img src="../image/category/feltset.webp" alt="category" />
+                <a href="product.html" class="categorySlide" title="9">
+                  <img
+                    title="9"
+                    src="../image/category/feltset.webp"
+                    alt="category"
+                  />
                   Bộ Nỉ
                 </a>
               </li>
@@ -130,7 +148,7 @@
               id="search"
               placeholder="  Tìm kiếm sản phẩm"
             />
-            <button>Tìm kiếm</button>
+            <a href="product.html" id="button-search">Tìm kiếm</a>
           </form>
         </div>
 
@@ -140,62 +158,62 @@
             <label for="categories">Category</label>
             <select name="categories" id="categories">
               <option value="">Chọn</option>
-              <option value="vest">Áo Vest Name</option>
-              <option value="threeHoles">Áo Ba Lỗ</option>
-              <option value="longSleeveShirt">Áo Sơ Mi Dài Tay</option>
-              <option value="patternedShirt">Áo Sơ Mi Họa Tiết</option>
-              <option value="polo">Áo Polo Nam</option>
-              <option value="longPolo">Áo Polo Dài Tay</option>
-              <option value="koreanMen">Áo Sơ Mi Hàn Quốc</option>
-              <option value="jacket">Áo Khoác</option>
-              <option value="feltset">Bộ Nỉ</option>
+              <option value="1">Áo Vest Name</option>
+              <option value="2">Áo Ba Lỗ</option>
+              <option value="3">Áo Sơ Mi Dài Tay</option>
+              <option value="4">Áo Sơ Mi Họa Tiết</option>
+              <option value="5">Áo Polo Nam</option>
+              <option value="6">Áo Polo Dài Tay</option>
+              <option value="7">Áo Sơ Mi Hàn Quốc</option>
+              <option value="8">Áo Khoác</option>
+              <option value="9">Bộ Nỉ</option>
               <option value="all">Tất Cả</option>
             </select>
           </div>
 
           <div class="filter-color">
             <div>
-              <input type="radio" name="color" id="white" />
+              <input type="radio" name="color" id="white" value="white" />
               <label for="white">Màu Trắng</label>
             </div>
 
             <div>
-              <input type="radio" name="color" id="black" />
+              <input type="radio" name="color" id="black" value="black" />
               <label for="black">Màu Đen</label>
             </div>
 
             <div>
-              <input type="radio" name="color" id="blue" />
+              <input type="radio" name="color" id="blue" value="blue" />
               <label for="blue">Màu Xanh</label>
             </div>
 
             <div>
-              <input type="radio" name="color" id="grey" />
+              <input type="radio" name="color" id="grey" value="grey" />
               <label for="grey">Màu Xám</label>
             </div>
 
             <div>
-              <input type="radio" name="color" id="caro" />
+              <input type="radio" name="color" id="caro" value="caro" />
               <label for="caro">Màu Caro</label>
             </div>
 
             <div>
-              <input type="radio" name="color" id="purple" />
+              <input type="radio" name="color" id="purple" value="purple" />
               <label for="purple">Màu Tím</label>
             </div>
 
             <div>
-              <input type="radio" name="color" id="pink" />
+              <input type="radio" name="color" id="pink" value="pink" />
               <label for="pink">Màu Hồng</label>
             </div>
 
             <div>
-              <input type="radio" name="color" id="brown" />
+              <input type="radio" name="color" id="brown" value="brown" />
               <label for="brown">Màu Nâu</label>
             </div>
 
             <div>
-              <input type="radio" name="color" id="gray" />
+              <input type="radio" name="color" id="gray" value="gray" />
               <label for="gray">Màu Ghi</label>
             </div>
           </div>

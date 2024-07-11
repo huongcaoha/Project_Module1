@@ -1,3 +1,15 @@
+function getDataLocalStorage(nameData) {
+  if (localStorage.getItem(nameData)) {
+    let data = localStorage.getItem(nameData);
+  } else {
+    return "";
+  }
+  return JSON.parse(data);
+}
+
+function updateDataLocalStorage(nameData, newData) {
+  localStorage.setItem(nameData, JSON.stringify(newData));
+}
 let category = [
   "vest",
   "vest",
@@ -10,6 +22,21 @@ let category = [
   "jacket",
   "feltset",
 ];
+
+let categoryProduct = 1;
+let slide = 1;
+
+let listTagCategorySlide = document.querySelectorAll(".categorySlide");
+listTagCategorySlide.forEach((tag) =>
+  tag.addEventListener("click", function (e) {
+    categoryProduct = e.target.getAttribute("title");
+    slide = e.target.getAttribute("title");
+    console.log(slide);
+    updateDataLocalStorage("categoryProduct", categoryProduct);
+    updateDataLocalStorage("slide", slide);
+  })
+);
+
 let categoryJson = JSON.stringify(category);
 localStorage.setItem("category", categoryJson);
 
@@ -22,6 +49,7 @@ let listProduct = [
     image1: "vest_image1.webp",
     image2: "vest_image1_1.webp",
     color: "black",
+    inventory: 99,
   },
 
   {
@@ -32,6 +60,7 @@ let listProduct = [
     image1: "vest_image2.webp",
     image2: "vest_image2_1.jpg",
     color: "purple",
+    inventory: 99,
   },
 
   {
@@ -42,6 +71,7 @@ let listProduct = [
     image1: "vest_image3.webp",
     image2: "vest_image3_1.webp",
     color: "gray",
+    inventory: 99,
   },
 
   {
@@ -52,6 +82,7 @@ let listProduct = [
     image1: "vest_image4.webp",
     image2: "vest_image4_1.webp",
     color: "purple",
+    inventory: 99,
   },
 
   {
@@ -62,6 +93,7 @@ let listProduct = [
     image1: "vest_image5.webp",
     image2: "vest_image5_1.webp",
     color: "purple",
+    inventory: 99,
   },
 
   {
@@ -72,6 +104,7 @@ let listProduct = [
     image1: "vest_image6.webp",
     image2: "vest_image6_1.jpg",
     color: "purple",
+    inventory: 99,
   },
 
   {
@@ -82,6 +115,7 @@ let listProduct = [
     image1: "vest_image7.webp",
     image2: "vest_image7_1.webp",
     color: "gray",
+    inventory: 99,
   },
 
   {
@@ -92,6 +126,7 @@ let listProduct = [
     image1: "vest_image8.webp",
     image2: "vest_image8_1.webp",
     color: "gray",
+    inventory: 99,
   },
 
   {
@@ -102,6 +137,7 @@ let listProduct = [
     image1: "vest_image9.webp",
     image2: "vest_image9_1.webp",
     color: "black",
+    inventory: 99,
   },
 
   {
@@ -112,6 +148,7 @@ let listProduct = [
     image1: "vest_image10.webp",
     image2: "vest_image10_1.jpg",
     color: "gray",
+    inventory: 99,
   },
 
   {
@@ -122,6 +159,7 @@ let listProduct = [
     image1: "threeHoles_image1.webp",
     image2: "threeHoles_image1_1.webp",
     color: "black",
+    inventory: 99,
   },
 
   {
@@ -132,6 +170,7 @@ let listProduct = [
     image1: "threeHoles_image2.webp",
     image2: "threeHoles_image2_1.webp",
     color: "white",
+    inventory: 99,
   },
 
   {
@@ -142,6 +181,7 @@ let listProduct = [
     image1: "threeHoles_image3.webp",
     image2: "threeHoles_image3_1.webp",
     color: "black",
+    inventory: 99,
   },
 
   {
@@ -152,6 +192,7 @@ let listProduct = [
     image1: "threeHoles_image4.webp",
     image2: "threeHoles_image4_1.webp",
     color: "white",
+    inventory: 99,
   },
 
   {
@@ -162,6 +203,7 @@ let listProduct = [
     image1: "longSleeveShirt_image1.webp",
     image2: "longSleeveShirt_image1_1.webp",
     color: "white",
+    inventory: 99,
   },
 
   {
@@ -172,6 +214,7 @@ let listProduct = [
     image1: "longSleeveShirt_image2.webp",
     image2: "longSleeveShirt_image2_1.webp",
     color: "white",
+    inventory: 99,
   },
 
   {
@@ -182,6 +225,7 @@ let listProduct = [
     image1: "longSleeveShirt_image3.webp",
     image2: "longSleeveShirt_image3_1.webp",
     color: "blue",
+    inventory: 99,
   },
 
   {
@@ -192,6 +236,7 @@ let listProduct = [
     image1: "longSleeveShirt_image4.webp",
     image2: "longSleeveShirt_image4_1.webp",
     color: "white",
+    inventory: 99,
   },
 
   {
@@ -202,6 +247,7 @@ let listProduct = [
     image1: "longSleeveShirt_image5.webp",
     image2: "longSleeveShirt_image5_1.webp",
     color: "blue",
+    inventory: 99,
   },
 
   {
@@ -212,6 +258,7 @@ let listProduct = [
     image1: "longSleeveShirt_image6.webp",
     image2: "longSleeveShirt_image6_1.webp",
     color: "blue",
+    inventory: 99,
   },
 
   {
@@ -222,6 +269,7 @@ let listProduct = [
     image1: "longSleeveShirt_image7.webp",
     image2: "longSleeveShirt_image7_1.webp",
     color: "white",
+    inventory: 99,
   },
 
   {
@@ -232,6 +280,7 @@ let listProduct = [
     image1: "longSleeveShirt_image8.webp",
     image2: "longSleeveShirt_image8_1.webp",
     color: "blue",
+    inventory: 99,
   },
 
   {
@@ -242,6 +291,7 @@ let listProduct = [
     image1: "longSleeveShirt_image9.webp",
     image2: "longSleeveShirt_image9_1.webp",
     color: "purple",
+    inventory: 99,
   },
 
   {
@@ -252,6 +302,7 @@ let listProduct = [
     image1: "longSleeveShirt_image10.webp",
     image2: "longSleeveShirt_image10_1.webp",
     color: "blue",
+    inventory: 99,
   },
 
   {
@@ -262,6 +313,7 @@ let listProduct = [
     image1: "patternedShirt_image1.webp",
     image2: "patternedShirt_image1_1.webp",
     color: "blue",
+    inventory: 99,
   },
 
   {
@@ -272,6 +324,7 @@ let listProduct = [
     image1: "patternedShirt_image2.webp",
     image2: "patternedShirt_image2_1.jpg",
     color: "blue",
+    inventory: 99,
   },
 
   {
@@ -282,6 +335,7 @@ let listProduct = [
     image1: "patternedShirt_image3.webp",
     image2: "patternedShirt_image3_1.webp",
     color: "blue",
+    inventory: 99,
   },
 
   {
@@ -292,6 +346,7 @@ let listProduct = [
     image1: "patternedShirt_image4.webp",
     image2: "patternedShirt_image4_1.jpg",
     color: "blue",
+    inventory: 99,
   },
 
   {
@@ -302,6 +357,7 @@ let listProduct = [
     image1: "patternedShirt_image5.webp",
     image2: "patternedShirt_image5_1.jpg",
     color: "blue",
+    inventory: 99,
   },
 
   {
@@ -312,6 +368,7 @@ let listProduct = [
     image1: "patternedShirt_image6.webp",
     image2: "patternedShirt_image6_1.webp",
     color: "blue",
+    inventory: 99,
   },
 
   {
@@ -322,6 +379,7 @@ let listProduct = [
     image1: "patternedShirt_image7.webp",
     image2: "patternedShirt_image7_1.webp",
     color: "white",
+    inventory: 99,
   },
 
   {
@@ -332,6 +390,7 @@ let listProduct = [
     image1: "patternedShirt_image8.jpg",
     image2: "patternedShirt_image8_1.webp",
     color: "purple",
+    inventory: 99,
   },
 
   {
@@ -342,6 +401,7 @@ let listProduct = [
     image1: "polo_image1.webp",
     image2: "polo_image1_1.webp",
     color: "blue",
+    inventory: 99,
   },
 
   {
@@ -352,6 +412,7 @@ let listProduct = [
     image1: "polo_image2.webp",
     image2: "polo_image2_1.webp",
     color: "brown",
+    inventory: 99,
   },
 
   {
@@ -362,6 +423,7 @@ let listProduct = [
     image1: "polo_image3.webp",
     image2: "polo_image3_1.webp",
     color: "black",
+    inventory: 99,
   },
 
   {
@@ -372,6 +434,7 @@ let listProduct = [
     image1: "polo_image4.webp",
     image2: "polo_image4_1.webp",
     color: "gray",
+    inventory: 99,
   },
 
   {
@@ -382,6 +445,7 @@ let listProduct = [
     image1: "polo_image5.webp",
     image2: "polo_image5_1.webp",
     color: "pink",
+    inventory: 99,
   },
 
   {
@@ -392,6 +456,7 @@ let listProduct = [
     image1: "polo_image6.webp",
     image2: "polo_image6_1.webp",
     color: "white",
+    inventory: 99,
   },
 
   {
@@ -402,6 +467,7 @@ let listProduct = [
     image1: "polo_image7.webp",
     image2: "polo_image7_1.webp",
     color: "pink",
+    inventory: 99,
   },
 
   {
@@ -412,6 +478,7 @@ let listProduct = [
     image1: "polo_image8.webp",
     image2: "polo_image8_1.webp",
     color: "brown",
+    inventory: 99,
   },
 
   {
@@ -422,6 +489,7 @@ let listProduct = [
     image1: "polo_image9.webp",
     image2: "polo_image9_1.webp",
     color: "white",
+    inventory: 99,
   },
 
   {
@@ -432,6 +500,7 @@ let listProduct = [
     image1: "polo_image10.webp",
     image2: "polo_image10_1.webp",
     color: "white",
+    inventory: 99,
   },
 
   {
@@ -442,6 +511,7 @@ let listProduct = [
     image1: "longPolo_image1.jpg",
     image2: "longPolo_image1_1.webp",
     color: "black",
+    inventory: 99,
   },
 
   {
@@ -452,6 +522,7 @@ let listProduct = [
     image1: "koreanMen_image1.webp",
     image2: "koreanMen_image1_1.webp",
     color: "white",
+    inventory: 99,
   },
 
   {
@@ -462,6 +533,7 @@ let listProduct = [
     image1: "koreanMen_image2.webp",
     image2: "koreanMen_image2_1.webp",
     color: "white",
+    inventory: 99,
   },
 
   {
@@ -472,6 +544,7 @@ let listProduct = [
     image1: "koreanMen_image3.webp",
     image2: "koreanMen_image3_1.jpg",
     color: "blue",
+    inventory: 99,
   },
 
   {
@@ -482,6 +555,7 @@ let listProduct = [
     image1: "koreanMen_image4.webp",
     image2: "koreanMen_image4_1.webp",
     color: "blue",
+    inventory: 99,
   },
 
   {
@@ -492,6 +566,7 @@ let listProduct = [
     image1: "koreanMen_image5.webp",
     image2: "koreanMen_image5_1.webp",
     color: "blue",
+    inventory: 99,
   },
 
   {
@@ -502,6 +577,7 @@ let listProduct = [
     image1: "koreanMen_image6.webp",
     image2: "koreanMen_image6_1.webp",
     color: "white",
+    inventory: 99,
   },
 
   {
@@ -512,6 +588,7 @@ let listProduct = [
     image1: "koreanMen_image7.jpg",
     image2: "koreanMen_image7_1.webp",
     color: "purple",
+    inventory: 99,
   },
 
   {
@@ -522,6 +599,7 @@ let listProduct = [
     image1: "koreanMen_image8.webp",
     image2: "koreanMen_image8_1.webp",
     color: "blue",
+    inventory: 99,
   },
 
   {
@@ -532,6 +610,7 @@ let listProduct = [
     image1: "koreanMen_image9.webp",
     image2: "koreanMen_image9_1.jpg",
     color: "blue",
+    inventory: 99,
   },
 
   {
@@ -542,12 +621,15 @@ let listProduct = [
     image1: "koreanMen_image10.webp",
     image2: "koreanMen_image10_1.jpg",
     color: "purple",
+    inventory: 99,
   },
 ];
 
 // display list product vest
-let productJson = JSON.stringify(listProduct);
-localStorage.setItem("products", productJson);
+if (!localStorage.getItem("products")) {
+  let productJson = JSON.stringify(listProduct);
+  localStorage.setItem("products", productJson);
+}
 
 const tagVestProduct = document.querySelector(".vestProduct");
 let listVestJson = localStorage.getItem("products");
@@ -669,3 +751,8 @@ for (let item of listItems) {
 
 let inputSearch = document.querySelector("#input-search");
 let buttonSearch = document.querySelector("#button-search");
+buttonSearch.addEventListener("click", function (e) {
+  let valueSearch = inputSearch.value;
+  updateDataLocalStorage("search", valueSearch);
+  console.log(valueSearch);
+});
