@@ -10,6 +10,7 @@ function getDataLocalStorage(nameData) {
 function updateDataLocalStorage(nameData, newData) {
   localStorage.setItem(nameData, JSON.stringify(newData));
 }
+
 let category = [
   "vest",
   "vest",
