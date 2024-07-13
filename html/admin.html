@@ -59,22 +59,49 @@
         <ul>
           <li>
             <i class="fa-solid fa-gauge"></i>
-            <label for="dashboard">Dashboard</label>
+            <label for="content1" id="content1" class="dashboard" title="1"
+              >Dashboard</label
+            >
           </li>
           <li>
             <i class="fa-solid fa-table-cells product"></i>
-            <label for="product">Product</label>
+            <label
+              for="section-product"
+              class="dashboard"
+              id="section-product"
+              title="2"
+              >Product</label
+            >
           </li>
           <li>
             <i class="fa-solid fa-hand-holding-dollar"></i>
-            <label for="ruvenue">Revenue</label>
+            <label
+              for="section-ruvenue"
+              class="dashboard"
+              id="section-revenue"
+              title="3"
+              >Revenue</label
+            >
           </li>
           <li>
-            <i class="fa-solid fa-user"></i> <label for="user">User</label>
+            <i class="fa-solid fa-user"></i>
+            <label
+              for="section-user"
+              class="dashboard"
+              id="section-user"
+              title="4"
+              >User</label
+            >
           </li>
           <li>
             <i class="fa-solid fa-cart-shopping"></i>
-            <label for="order">Order</label>
+            <label
+              for="section-order"
+              class="dashboard"
+              id="section-order"
+              title="5"
+              >Order</label
+            >
           </li>
         </ul>
       </div>
@@ -192,6 +219,8 @@
       <div class="section-product">
         <h2 class="title-section">List Products</h2>
 
+        <button id="buttonDisplayFormCreate">Create New Product</button>
+
         <table id="table-product">
           <!-- <tr>
             <th>Id</th>
@@ -222,9 +251,191 @@
 
         <div class="pagination"></div>
       </div>
+
+      <div class="section-revenue"></div>
+
+      <div class="section-user"></div>
+
+      <div class="section-order"></div>
     </main>
 
     <footer></footer>
+
+    <!-- form tạo sản phẩm mới -->
+    <div id="productFormCreate">
+      <div class="form">
+        <div>
+          <h2>Create New Product</h2>
+        </div>
+
+        <div>
+          <label for="productInputName">Product Name :</label>
+          <input type="text" id="productInputName" class="productInputName" />
+        </div>
+
+        <div>
+          <label for="productInputPrice">Price : </label>
+          <input
+            type="number"
+            id="productInputPrice"
+            name="productInputPrice"
+          />
+        </div>
+
+        <div>
+          <label for="productInputColor">Color :</label>
+          <select name="productInputColor" id="productInputColor">
+            <option value="">Select</option>
+            <option value="black">Black</option>
+            <option value="purple">Purple</option>
+            <option value="gray">Gray</option>
+            <option value="white">White</option>
+            <option value="blue">Blue</option>
+            <option value="brown">Brown</option>
+            <option value="pink">Pink</option>
+            <option value="grey">Grey</option>
+          </select>
+        </div>
+
+        <div>
+          <label for="productInputCategory">Category :</label>
+          <select name="productInputCategory" id="productInputCategory">
+            <option value="">Select</option>
+            <option value="vest">Vest</option>
+            <option value="threeHoles">ThreeHoles</option>
+            <option value="longSleeveShirt">LongSleeveShirt</option>
+            <option value="patternedShirt">PatternedShirt</option>
+            <option value="polo">Polo</option>
+            <option value="longPolo">Long Polo</option>
+            <option value="koreanMen">Korean Men</option>
+            <option value="jacket">Jacket</option>
+            <option value="feltset">Feltset</option>
+          </select>
+        </div>
+
+        <div>
+          <label for="productInputInventory">Inventory :</label>
+          <input
+            type="number"
+            name="productInputInventory"
+            id="productInputInventory"
+          />
+        </div>
+
+        <div>
+          <label for="productInputImage1">Image 1 :</label>
+          <input
+            type="file"
+            name="productInputImage1"
+            id="productInputImage1"
+            accept="image/*"
+          />
+        </div>
+
+        <div>
+          <label for="productInputImage2">Image 2 :</label>
+          <input
+            type="file"
+            name="productInputImage2"
+            id="productInputImage2"
+            accept="image/*"
+          />
+        </div>
+
+        <div class="div-button">
+          <button id="productButtonCreate">Create</button>
+          <button class="productButtonCancel">Cancel</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- form update sản phẩm -->
+    <div id="productFormUpdate">
+      <div class="form">
+        <div>
+          <h2>Update Product</h2>
+        </div>
+
+        <div>
+          <label for="productInputName2">Product Name :</label>
+          <input type="text" id="productInputName2" class="productInputName2" />
+        </div>
+
+        <div>
+          <label for="productInputPrice2">Price : </label>
+          <input
+            type="number"
+            id="productInputPrice2"
+            name="productInputPrice2"
+          />
+        </div>
+
+        <div>
+          <label for="productInputColor2">Color :</label>
+          <select name="productInputColor2" id="productInputColor2">
+            <option value="">Select</option>
+            <option value="black">Black</option>
+            <option value="purple">Purple</option>
+            <option value="gray">Gray</option>
+            <option value="white">White</option>
+            <option value="blue">Blue</option>
+            <option value="brown">Brown</option>
+            <option value="pink">Pink</option>
+            <option value="grey">Grey</option>
+          </select>
+        </div>
+
+        <div>
+          <label for="productInputCategory2">Category :</label>
+          <select name="productInputCategory2" id="productInputCategory2">
+            <option value="">Select</option>
+            <option value="vest">Vest</option>
+            <option value="threeHoles">ThreeHoles</option>
+            <option value="longSleeveShirt">LongSleeveShirt</option>
+            <option value="patternedShirt">PatternedShirt</option>
+            <option value="polo">Polo</option>
+            <option value="longPolo">Long Polo</option>
+            <option value="koreanMen">Korean Men</option>
+            <option value="jacket">Jacket</option>
+            <option value="feltset">Feltset</option>
+          </select>
+        </div>
+
+        <div>
+          <label for="productInputInventory2">Inventory :</label>
+          <input
+            type="number"
+            name="productInputInventory2"
+            id="productInputInventory2"
+          />
+        </div>
+
+        <div>
+          <label for="productInputImage12">Image 1 :</label>
+          <input
+            type="file"
+            name="productInputImage12"
+            id="productInputImage12"
+            accept="image/*"
+          />
+        </div>
+
+        <div>
+          <label for="productInputImage22">Image 2 :</label>
+          <input
+            type="file"
+            name="productInputImage22"
+            id="productInputImage22"
+            accept="image/*"
+          />
+        </div>
+
+        <div class="div-button">
+          <button id="productButtonUpdate">Update</button>
+          <button class="productButtonCancel2">Cancel</button>
+        </div>
+      </div>
+    </div>
     <script src="../javascript/admin.js"></script>
   </body>
 </html>
