@@ -1,10 +1,10 @@
-// Controls dashbroad
+// -------------------------------------------------------------------Controls dashbroad
 const controlContent1 = document.getElementById("content1");
 controlContent1.addEventListener("click", function () {
   updateDataLocalStorage("currentDisplayContent", 1);
   window.location.reload();
 });
-console.log(controlContent1);
+
 const controlProduct = document.getElementById("section-product");
 controlProduct.addEventListener("click", function () {
   updateDataLocalStorage("currentDisplayContent", 2);
@@ -30,11 +30,15 @@ controlOrder.addEventListener("click", function () {
 });
 
 let content1 = document.querySelector(".content1");
+
 let sectionProduct = document.querySelector(".section-product");
+
 let sectionRevenue = document.querySelector(".section-revenue");
+
 let sectionUser = document.querySelector(".section-user");
+
 let sectionOrder = document.querySelector(".section-order");
-console.log(content1);
+
 let listControls = [
   "123",
   content1,
@@ -43,14 +47,15 @@ let listControls = [
   sectionUser,
   sectionOrder,
 ];
+
 let currentDisplayContent = getDataLocalstorage("currentDisplayContent");
-for (let i = 0; i < listControls.length; i++) {
+for (let i = 1; i < listControls.length; i++) {
   if (i != currentDisplayContent) {
     listControls[i].classList.add("display-none");
   }
 }
 
-// section products
+// ---------------------------------------------------------------------------------section products---------------------------------------------------------------------------
 function getDataLocalstorage(nameData) {
   return JSON.parse(localStorage.getItem(nameData));
 }
@@ -509,3 +514,256 @@ for (let btnDelete of productButtonDeletes) {
     window.location.reload();
   });
 }
+
+//----------------------------------------------------------------------------------------- section revrenue
+
+//----------------------------------------------------------------------------------------- section order
+
+if (!getDataLocalstorage("listOrders")) {
+  let listOrders = [];
+  updateDataLocalStorage("listOrders", listOrders);
+}
+
+//data demo list orders
+class Product {
+  constructor(idProduct, productName, price, quantity) {
+    (this.idProduct = idProduct),
+      (this.productName = productName),
+      (this.price = price),
+      (this.quantity = quantity),
+      (this.totalMoney = this.price * this.quantity);
+  }
+}
+// let listOrdersDemo = [];
+// for (let i = 1; i <= 20; i++) {
+//   let order = {
+//     id: i,
+//     listProduct: [
+//       new Product(1, `Product1`, 5000, i),
+//       new Product(2, `Product2`, 6000, i),
+//       new Product(3, `Product3`, 7000, i),
+//       new Product(4, `Product4`, 8000, i),
+//       new Product(5, `Product5`, 9000, i),
+//       new Product(6, `Product6`, 10000, i),
+//       new Product(7, `Product7`, 11000, i),
+//       new Product(8, `Product8`, 12000, i),
+//     ],
+//     totalMoney: 1234567,
+//     day: new Date().getDate(),
+//     month: new Date().getMonth() + 1,
+//     year: new Date().getFullYear(),
+//     status: 3,
+//     idUser: 1,
+//   };
+//   listOrdersDemo.push(order);
+// }
+// updateDataLocalStorage("listOrders", listOrdersDemo);
+
+// get dữ liệu in ra bảng trong section orders
+let listOrders = [];
+if (getDataLocalstorage("listOrders")) {
+  listOrders = Object.values(getDataLocalstorage("listOrders"));
+}
+let orderCurrentPage = 1;
+if (getDataLocalstorage("orderCurrentPage")) {
+  orderCurrentPage = getDataLocalstorage("orderCurrentPage");
+} else {
+  updateDataLocalStorage("orderCurrentPage", orderCurrentPage);
+}
+let orderItemPerPage = 10;
+let orderTotalPage = Math.ceil(listOrders.length / orderItemPerPage);
+
+let orderEnd = orderCurrentPage * orderItemPerPage;
+
+let orderStart = orderEnd - orderItemPerPage;
+let orderCurrentList = listOrders.slice(orderStart, orderEnd);
+let contentTable = ` <tr>
+            <th>ID</th>
+            <th>List Products</th>
+            <th>Total Money</th>
+            <th>Date Time</th>
+            <th>Status</th>
+            <th>Id User</th>
+            <th></th>
+          </tr>`;
+let tableSectionOrders = document.getElementById("tableSectionOrders");
+if (getDataLocalstorage("listOrders")) {
+  listOrders = getDataLocalstorage("listOrders");
+}
+for (let order of orderCurrentList) {
+  let listProduct = order.listProduct
+    .map((element) => element.productName)
+    .join(",");
+  let status = ["", "ordered", "delivering", "success"];
+  contentTable += ` <tr>
+            <td>${order.id}</td>
+            <td>${listProduct}</td>
+            <td>${order.totalMoney}</td>
+            <td>${order.day}/${order.month}/${order.year}</td>
+            <td>${status[order.status]}</td>
+             <td>${order.idUser}</td>
+            <td>
+              <button class="orderButtonDelete" title="${
+                order.id
+              }">Delete</button>
+            </td>
+          </tr>`;
+}
+tableSectionOrders.innerHTML = contentTable;
+
+// pagination Orders
+let orderTotalCurrentPagination = Math.ceil(orderCurrentPage / 10) * 10;
+let orderPagination = document.querySelector(".orderPagination");
+let contentOrderPagination = ` <button class="lt-orderPagination">&lt;</button>`;
+for (
+  let i = orderTotalCurrentPagination - 9;
+  i <= orderTotalCurrentPagination;
+  i++
+) {
+  if (i > orderTotalPage) {
+    break;
+  }
+  if (i == orderCurrentPage) {
+    contentOrderPagination += `<button class="sub-orderPagination" title="${i}" style="background-color:#2196f7;">${i}</button>`;
+  } else {
+    contentOrderPagination += `<button class="sub-orderPagination" title="${i}">${i}</button>`;
+  }
+}
+contentOrderPagination += ` <button class="gt-orderPagination">&gt;</button>`;
+orderPagination.innerHTML = contentOrderPagination;
+
+//Gọi sự kiện nhấn vào từng number Pagination Orders
+let gtOrderPagination = document.querySelector(".gt-orderPagination");
+let ltOrderPagination = document.querySelector(".lt-orderPagination");
+let subOrderPaginations = document.querySelectorAll(".sub-orderPagination");
+
+gtOrderPagination.addEventListener("click", function () {
+  if (orderCurrentPage + 10 < orderTotalPage) {
+    let updateCurrentPage = Math.ceil(orderCurrentPage / 10) * 10 + 1;
+    updateDataLocalStorage("orderCurrentPage", updateCurrentPage);
+    window.location.reload();
+  }
+});
+
+ltOrderPagination.addEventListener("click", function () {
+  if (orderCurrentPage - 10 >= 1) {
+    let updateCurrentPage = Math.floor((orderCurrentPage - 10) / 10) * 10 + 1;
+    updateDataLocalStorage("orderCurrentPage", updateCurrentPage);
+    window.location.reload();
+  }
+});
+
+for (let pagination of subOrderPaginations) {
+  pagination.addEventListener("click", function () {
+    let value = pagination.getAttribute("title");
+    updateDataLocalStorage("orderCurrentPage", value);
+    window.location.reload();
+  });
+}
+
+// tạo sự kiện click xóa order
+let orderButtonDeletes = document.querySelectorAll(".orderButtonDelete");
+for (let btn of orderButtonDeletes) {
+  btn.addEventListener("click", function () {
+    let idProduct = btn.getAttribute("title");
+    let indexProduct = listOrders.findIndex(
+      (element) => element.id == idProduct
+    );
+    listOrders.splice(indexProduct, 1);
+    updateDataLocalStorage("listOrders", listOrders);
+    window.location.reload();
+  });
+}
+
+//-------------------------------------------------------------------------- Section User
+class User {
+  constructor(id, username, password, email, phoneNumber, birthday) {
+    (this.id = id),
+      (this.username = username),
+      (this.password = password),
+      (this.email = email),
+      (this.phoneNumber = phoneNumber),
+      (this.birthday = birthday),
+      (this.status = 1),
+      (this.createdDate = new Date());
+  }
+}
+
+let listUsers = [];
+if (getDataLocalstorage("listUsers")) {
+  listUsers = Object.values(getDataLocalstorage("listUsers"));
+} else {
+  updateDataLocalStorage("listUsers", listUsers);
+}
+
+// tạo dữ liệu giả để phục vụ cho tạo trang Users
+// let listUsersDemo = [];
+// for (let i = 1; i <= 20; i++) {
+//   let newUser = new User(
+//     i,
+//     `user${i}`,
+//     "123456789",
+//     `user${i}@gmail.com`,
+//     "0123456789",
+//     "23/08/1994"
+//   );
+//   listUsersDemo.push(newUser);
+// }
+// updateDataLocalStorage("listUsers", listUsersDemo);
+let userCurrentPage = 1;
+if (getDataLocalstorage("userCurrentPage")) {
+  userCurrentPage = getDataLocalstorage("userCurrentPage");
+} else {
+  updateDataLocalStorage("userCurrentPage", userCurrentPage);
+}
+let userItemPerPage = 10;
+let userTotalPage = Math.ceil(listUsers.length / userItemPerPage);
+let userEnd = userCurrentPage * userItemPerPage;
+let userStart = userEnd - userItemPerPage;
+let listCurrentUsers = listUsers.splice(userStart, userEnd);
+let tableSectionUsers = document.querySelector("#tableSectionUsers");
+let contentTableSectionUsers = ` <tr>
+            <th>Id</th>
+            <th>Username</th>
+            <th>Email</th>
+            <th>Phone Number</th>
+            <th>Birthday</th>
+            <th>Status</th>
+            <th></th>
+          </tr>`;
+for (let user of listCurrentUsers) {
+  let status = user.status == 1 ? "on" : "off";
+  contentTableSectionUsers += `<tr>
+            <td>${user.id}</td>
+            <td>${user.username}</td>
+            <td>${user.email}</td>
+            <td>${user.phoneNumber}</td>
+            <td>${user.birthday}</td>
+            <td>${status}</td>
+            <td>
+            <button class="userUpdateStatus">Ban</button>
+            </td>
+          </tr>`;
+}
+tableSectionUsers.innerHTML = contentTableSectionUsers;
+
+// User pagination
+let userPagination = document.querySelector(".userPagination");
+let userTotalCurrentPagination = Math.ceil(userCurrentPage / 10) * 10;
+let contentUserPagination = `<button class="ltUserPagination">&lt;</button>`;
+for (
+  let i = userTotalCurrentPagination - 9;
+  i <= userTotalCurrentPagination;
+  i++
+) {
+  if (i > userTotalPage) {
+    break;
+  }
+  if (userCurrentPage == i) {
+    contentUserPagination += `<button class="sub-userPagination" style="background-color:#2196f7;">${i}</button>`;
+  } else {
+    contentUserPagination += `<button class="sub-userPagination">${i}</button>`;
+  }
+}
+contentUserPagination += ` <button class="gtUserPagination">&gt;</button>`;
+userPagination.innerHTML = contentUserPagination;
