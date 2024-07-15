@@ -246,6 +246,51 @@ main {
     }
   }
 
+  .section-revenue {
+    text-align: center;
+    width: 85%;
+    padding: 50px 100px;
+
+    h2 {
+      font-size: 30px;
+      border-bottom: 5px solid #2196f7;
+    }
+
+    table,
+    tr,
+    th,
+    td {
+      border: 1px solid black;
+      border-collapse: collapse;
+      padding: 10px;
+    }
+
+    .tableSectionRevenue {
+      width: 80%;
+      margin-top: 50px;
+      margin-left: 10%;
+
+      tr {
+        td {
+          img {
+            width: 100px;
+            height: 100px;
+            margin-top: 5px;
+          }
+        }
+      }
+    }
+
+    .revenuePagination {
+      margin-top: 20px;
+
+      button {
+        padding: 5px 10px;
+        margin: 0 3px;
+      }
+    }
+  }
+
   .section-product {
     /* display: none; */
     width: 85%;

@@ -28,6 +28,10 @@ controlOrder.addEventListener("click", function () {
   updateDataLocalStorage("currentDisplayContent", 5);
   window.location.reload();
 });
+let listOrders = [];
+if (getDataLocalstorage("listOrders")) {
+  listOrders = Object.values(getDataLocalstorage("listOrders"));
+}
 
 let content1 = document.querySelector(".content1");
 
@@ -261,6 +265,27 @@ function createNewProduct() {
   let imageName1 = productInputImage1?.files?.[0]?.name ?? "";
 
   let imageName2 = productInputImage2?.files?.[0]?.name ?? "";
+  productInputImage1.addEventListener("change", function () {
+    if (productInputImage1.files && productInputImage1.files[0]) {
+      var reader = new FileReader();
+      reader.onload = function (e) {
+        imageName1 = e.target.result;
+        console.log(e.target.result);
+      };
+      reader.readAsDataURL(productInputImage1.files[0]);
+    }
+  });
+
+  productInputImage2.addEventListener("change", function () {
+    if (productInputImage2.files && productInputImage2.files[0]) {
+      var reader = new FileReader();
+      reader.onload = function (e) {
+        imageName2 = e.target.result;
+        console.log(e.target.result);
+      };
+      reader.readAsDataURL(productInputImage2.files[0]);
+    }
+  });
 
   let totalProducts = [];
   const productsData = getDataLocalstorage("products");
@@ -452,19 +477,30 @@ for (let btnUpdate of listButtonUpdate) {
       let productInputImage12 = document.getElementById("productInputImage12");
       let productInputImage22 = document.getElementById("productInputImage22");
 
-      //còn thiếu đoạn code lưu ảnh
-      let imageName1 =
-        productInputImage12 &&
-        productInputImage12.files &&
-        productInputImage12.files[0]
-          ? productInputImage12.files[0].name
-          : `${product.image1}`;
-      let imageName2 =
-        productInputImage22 &&
-        productInputImage22.files &&
-        productInputImage22.files[0]
-          ? productInputImage22.files[0].name
-          : `${product.image2}`;
+      // đoạn code lưu ảnh
+      let imageName1 = product.image1;
+      let imageName2 = product.image2;
+      productInputImage12.addEventListener("change", function () {
+        if (productInputImage12.files && productInputImage12.files[0]) {
+          var reader = new FileReader();
+          reader.onload = function (e) {
+            imageName1 = e.target.result;
+            console.log(e.target.result);
+          };
+          reader.readAsDataURL(productInputImage12.files[0]);
+        }
+      });
+
+      productInputImage22.addEventListener("change", function () {
+        if (productInputImage22.files && productInputImage22.files[0]) {
+          var reader = new FileReader();
+          reader.onload = function (e) {
+            imageName2 = e.target.result;
+            console.log(e.target.result);
+          };
+          reader.readAsDataURL(productInputImage22.files[0]);
+        }
+      });
 
       let totalProducts = getDataLocalstorage("products");
       let productName = productInputName2.value;
@@ -482,8 +518,8 @@ for (let btnUpdate of listButtonUpdate) {
         category: category,
         name: productName,
         price: price,
-        image1: image1,
-        image2: image2,
+        image1: imageName1,
+        image2: imageName2,
         color: color,
         inventory: inventory,
       };
@@ -516,6 +552,58 @@ for (let btnDelete of productButtonDeletes) {
 }
 
 //----------------------------------------------------------------------------------------- section revrenue
+let revenueYear = new Date().getFullYear();
+if (getDataLocalstorage("revenueYear")) {
+  revenueMonth = getDataLocalstorage("revenueYear");
+} else {
+  updateDataLocalStorage("revenueYear", revenueYear);
+}
+let tableSectionRevenue = document.querySelector(".tableSectionRevenue");
+let contentTableRevenue = ` <tr>
+            <th>Month</th>
+            <th>Year</th>
+            <th>Revenue</th>
+            <th>Target</th>
+            <th>Complete</th>
+          </tr>`;
+const formatter = new Intl.NumberFormat("vi-VN", {
+  style: "currency",
+  currency: "VND",
+  minimumFractionDigits: 0,
+});
+
+let target = 30000000;
+let year = getDataLocalstorage("revenueYear");
+let revenue = listOrders.reduce((pre, curent) => pre + curent.totalMoney, 0);
+let complete = (revenue / target) * 100;
+if (revenue == 0) {
+  tableSectionRevenue.innerHTML = ` <h2>Không có dữ liệu năm ${revenueYear}</h2>`;
+} else {
+  for (let i = 1; i <= 12; i++) {
+    contentTableRevenue += `<tr>
+              <td>${i}</td>
+              <td>${year}</td>
+              <td>${formatter.format(revenue)}</td>
+              <td>${formatter.format(target)}</td>
+              <td>${Math.ceil(complete)}%</td>
+            </tr>`;
+  }
+  tableSectionRevenue.innerHTML = contentTableRevenue;
+}
+
+// Revenue Pagination
+
+let revenuePagination = document.querySelector(".revenuePagination");
+let contentRevenuePagination = ` <button class="ltRevenuePagination">&lt;</button>`;
+for (let i = revenueYear - 5; i <= revenueYear; i++) {
+  if (i == revenueYear) {
+    contentRevenuePagination += `<button class="sub-revenuePagination" style="background-color:#2196f7;">${i}</button>`;
+  } else {
+    contentRevenuePagination += ` <button class="sub-revenuePagination">${i}</button>`;
+  }
+}
+contentRevenuePagination += ` <button class="gtRevenuePagination">&gt;</button>`;
+revenuePagination.innerHTML = contentRevenuePagination;
 
 //----------------------------------------------------------------------------------------- section order
 
@@ -560,10 +648,7 @@ class Product {
 // updateDataLocalStorage("listOrders", listOrdersDemo);
 
 // get dữ liệu in ra bảng trong section orders
-let listOrders = [];
-if (getDataLocalstorage("listOrders")) {
-  listOrders = Object.values(getDataLocalstorage("listOrders"));
-}
+
 let orderCurrentPage = 1;
 if (getDataLocalstorage("orderCurrentPage")) {
   orderCurrentPage = getDataLocalstorage("orderCurrentPage");
