@@ -252,6 +252,11 @@ main {
     padding: 50px 100px;
     text-align: center;
 
+    h2 {
+      font-size: 30px;
+      border-bottom: 5px solid #2196f7;
+    }
+
     table,
     tr,
     th,

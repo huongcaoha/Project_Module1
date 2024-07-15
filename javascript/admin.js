@@ -741,7 +741,7 @@ for (let user of listCurrentUsers) {
             <td>${user.birthday}</td>
             <td>${status}</td>
             <td>
-            <button class="userUpdateStatus">Ban</button>
+            <button class="userUpdateStatus" title="${user.id}">Ban/Open</button>
             </td>
           </tr>`;
 }
@@ -760,10 +760,51 @@ for (
     break;
   }
   if (userCurrentPage == i) {
-    contentUserPagination += `<button class="sub-userPagination" style="background-color:#2196f7;">${i}</button>`;
+    contentUserPagination += `<button class="sub-userPagination" style="background-color:#2196f7;" title="${i}">${i}</button>`;
   } else {
-    contentUserPagination += `<button class="sub-userPagination">${i}</button>`;
+    contentUserPagination += `<button class="sub-userPagination" title="${i}">${i}</button>`;
   }
 }
 contentUserPagination += ` <button class="gtUserPagination">&gt;</button>`;
 userPagination.innerHTML = contentUserPagination;
+
+let subUserPagination = document.querySelectorAll(".sub-userPagination");
+let ltUserPagination = document.querySelector(".ltUserPagination");
+let gtUserPagination = document.querySelector(".gtUserPagination");
+
+ltUserPagination.addEventListener("click", function () {
+  if (userCurrentPage > 10) {
+    userCurrentPage = Math.floor((userCurrentPage - 10) / 10) * 10 + 1;
+    updateDataLocalStorage("userCurrentPage", userCurrentPage);
+    window.location.reload();
+  }
+});
+
+gtUserPagination.addEventListener("click", function () {
+  if (userCurrentPage + 10 <= userTotalPage) {
+    userCurrentPage = Math.ceil(userCurrentPage / 10) * 10 + 1;
+    updateDataLocalStorage("userCurrentPage", userCurrentPage);
+    window.location.reload();
+  }
+});
+
+for (let pagination of subUserPagination) {
+  pagination.addEventListener("click", function () {
+    let value = pagination.getAttribute("title");
+    updateDataLocalStorage("userCurrentPage", value);
+    window.location.reload();
+  });
+}
+
+// delete user
+let userUpdateStatus = document.querySelectorAll(".userUpdateStatus");
+for (let ban of userUpdateStatus) {
+  ban.addEventListener("click", function () {
+    let totalUsers = Object.values(getDataLocalstorage("listUsers"));
+    let id = ban.getAttribute("title");
+    let index = totalUsers.findIndex((element) => element.id == id);
+    totalUsers[index].status = totalUsers[index].status == 0 ? 1 : 0;
+    updateDataLocalStorage("listUsers", totalUsers);
+    window.location.reload();
+  });
+}
